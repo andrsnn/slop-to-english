@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" role="img" aria-label="LLM-speak on the left, plain English on the right">
+  <style>
+    text{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+    .t{font-size:30px;font-weight:700;fill:#e6edf3}
+    .s{font-size:17px;fill:#8b949e}
+    .h{font-size:14px;font-weight:700;letter-spacing:.12em}
+    .b{font-size:19px;fill:#ffa198}
+    .a{font-size:19px;fill:#7ee787}
+    .k{font-size:15px;fill:#8b949e}
+    .tag{font-size:12px;font-weight:700;letter-spacing:.1em;fill:#8b949e}
+  </style>
+  <rect width="960" height="560" rx="16" fill="#0d1117"/>
+  <text x="40" y="58" class="t">slop-to-english</text>
+  <text x="40" y="86" class="s">Turns LLM-speak into plain spoken English.</text>
+
+  <text x="40" y="132" class="h" fill="#ff7b72">BEFORE</text>
+  <text x="520" y="132" class="h" fill="#3fb950">AFTER</text>
+
+  <!-- row 1: abstract noun -->
+  <rect x="40" y="146" width="400" height="76" rx="10" fill="#3a1d1f" stroke="#f85149" stroke-opacity=".5"/>
+  <text x="58" y="166" class="tag">ABSTRACT NOUN</text>
+  <text x="58" y="190" class="b">Foundation for velocity: 3 quarters</text>
+  <text x="58" y="212" class="b">of test-suite investment.</text>
+  <text x="470" y="194" font-size="30" fill="#8b949e">→</text>
+  <rect x="520" y="146" width="400" height="76" rx="10" fill="#12261a" stroke="#3fb950" stroke-opacity=".5"/>
+  <text x="538" y="190" class="a">We spent 3 quarters on</text>
+  <text x="538" y="212" class="a">the test suite.</text>
+
+  <!-- row 2: meta flourish -->
+  <rect x="40" y="236" width="400" height="76" rx="10" fill="#3a1d1f" stroke="#f85149" stroke-opacity=".5"/>
+  <text x="58" y="256" class="tag">META-FLOURISH</text>
+  <text x="58" y="285" class="b">This deck was written by</text>
+  <text x="58" y="307" class="b">the thing it describes.</text>
+  <text x="470" y="284" font-size="30" fill="#8b949e">→</text>
+  <rect x="520" y="236" width="400" height="76" rx="10" fill="#12261a" stroke="#3fb950" stroke-opacity=".5"/>
+  <text x="538" y="280" class="a">A local model wrote the first draft.</text>
+
+  <!-- row 3: slogan -->
+  <rect x="40" y="326" width="400" height="76" rx="10" fill="#3a1d1f" stroke="#f85149" stroke-opacity=".5"/>
+  <text x="58" y="346" class="tag">SLOGAN</text>
+  <text x="58" y="383" class="b">The machine is the manager.</text>
+  <text x="470" y="374" font-size="30" fill="#8b949e">→</text>
+  <rect x="520" y="326" width="400" height="76" rx="10" fill="#12261a" stroke="#3fb950" stroke-opacity=".5"/>
+  <text x="538" y="370" class="a">A failing test blocks the commit.</text>
+
+  <!-- row 4: figurative verb -->
+  <rect x="40" y="416" width="400" height="76" rx="10" fill="#3a1d1f" stroke="#f85149" stroke-opacity=".5"/>
+  <text x="58" y="436" class="tag">FIGURATIVE VERB</text>
+  <text x="58" y="473" class="b">The pose finally lands.</text>
+  <text x="470" y="464" font-size="30" fill="#8b949e">→</text>
+  <rect x="520" y="416" width="400" height="76" rx="10" fill="#12261a" stroke="#3fb950" stroke-opacity=".5"/>
+  <text x="538" y="440" class="a">The model draws the reference image</text>
+  <text x="538" y="462" class="a">according to the skeleton pose provided.</text>
+
+  <text x="40" y="524" class="k">115 test cases  ·  opaque phrases count 3x  ·  every number and technical term kept</text>
+</svg>
