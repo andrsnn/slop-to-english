@@ -19,6 +19,7 @@ More lines of the kind the skill treats as top priority. Each "before" hides a n
 | Slogan | Ship fast, learn faster. We deployed 31 times last week. | We deployed 31 times last week. |
 | Slogan | Code is a liability. We deleted 6 of our 18 microservices in March. | We deleted 6 of our 18 microservices in March. |
 | Slogan | Small team, big impact: 4 engineers built the whole billing system in 10 weeks. | 4 engineers built the billing system in 10 weeks. |
+| Figurative verb | Listen to operators. They see the cracks the org chart misses first. | Ask the people who run day-to-day operations, like support and sales. They notice problems before anyone else does. |
 | Figurative verb | Our onboarding flow now sings. Signup takes 90 seconds and 2 screens. | Signup now takes 90 seconds and 2 screens. |
 | Figurative verb | The database finally exhaled after we added 3 read replicas, and p99 latency settled at 120 ms. | After we added 3 read replicas, p99 latency is 120 ms. |
 | Figurative verb | Kubernetes tamed the beast: 48 services now roll out with zero downtime. | With Kubernetes, 48 services now roll out with zero downtime. |

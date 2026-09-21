@@ -20,7 +20,7 @@ An opaque phrase sounds meaningful but has no literal meaning. The reader cannot
 
 | Type | Examples | Why it fails |
 |---|---|---|
-| **Figurative verb** | "The pose finally lands." "The model finally clicked." "The pipeline breathes." "The build flies." | Nothing lands, clicks, breathes or flies. What was measured? |
+| **Figurative verb** | "The pose finally lands." "The model finally clicked." "The pipeline breathes." "The build flies." "The cracks the org chart misses." | Nothing lands, clicks, breathes or flies. What was measured? |
 | **Abstract noun with no referent** | "The habit behind the fleet." "Foundation for velocity." "Engine of growth." "Momentum." "North star." "In our DNA." | The noun points at nothing. Which habit? What foundation? |
 | **Slogan** | "The machine is the manager." "Proof over claims." "Owning the stack." "Ship fast, learn faster." "Data beats opinions." | A poster line. It hides the actual rule or number. |
 | **Meta-flourish** | "An agent writing about agents." "Written by the thing it describes." "A story told in commits." "The numbers tell the story." | Talks about the text instead of saying something. |
@@ -80,6 +80,7 @@ Tier 1 first. These are real drafts from a slide deck written by a local model.
 | Slogan | Nobody trains on bad data. A human signs off first. | I review every training record before it's used. |
 | Slogan | The API bill is now zero. | I run the models on my own hardware, so there are no API fees. |
 | Figurative verb | The pose finally lands. | The model draws the reference image according to the skeleton pose provided. |
+| Figurative verb | Listen to operators. They see the cracks the org chart misses first. | Ask the people who run day-to-day operations, like support and sales. They notice problems before anyone else does. |
 | Figurative verb | The model finally clicked at epoch 14, hitting 91% accuracy. | The model reached 91% accuracy at epoch 14. |
 | Idiom | We moved the needle on churn: 5.1% down to 3.4%. | Churn fell from 5.1% to 3.4%. |
 | Vague claim | Four months, each one a step up. | Commits rose from 777 in June to 1,855 in August. |
