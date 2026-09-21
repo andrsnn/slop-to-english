@@ -1,6 +1,6 @@
 # slop-to-english
 
-![before and after](docs/before-after.svg)
+![before and after](docs/example.svg)
 
 Rewrites LLM-speak as plain spoken English. Clone it into your skills folder, then run `/slop-to-english`.
 
