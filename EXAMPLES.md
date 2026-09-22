@@ -39,6 +39,7 @@ More lines of the kind the skill treats as top priority. Each "before" hides a n
 | Slogan | The API bill is now zero. | I run the models on my own hardware, so there are no API fees. |
 | Symbols | 23/23 e2e | All 23 end-to-end tests pass |
 | Balanced count | Three ways to get answers, one way to score them. | The script can send each test to a server, run a command, or read a saved file. Scoring is the same for all three. |
+| Slogan | Abuse fell, real users got in. | Abuse goes down. Real users still get in. |
 
 ## Whole slides
 
