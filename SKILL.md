@@ -91,6 +91,28 @@ Tier 1 first. These are real drafts from a slide deck written by a local model.
 
 More in `EXAMPLES.md` and `evals/cases.jsonl`.
 
+## Messages to a customer or user
+
+When the text is an email or reply to a real user, these rules come from an author rewriting a
+drafted customer email by hand. They win over the plain-fact rules above where the two conflict.
+
+- **First person singular** when one person runs the product. "I just added", never "we built" or "our team shipped".
+- **Warm, short opener, then straight to the fixes.** "Thank you for taking the time to write this. It's really helpful. I totally hear you on all fronts." Do not restate the customer's problem back to them in detail; they know it.
+- **Humble, casual tone is fine.** "hopefully will help!" and one exclamation mark are allowed. Stiff certainty ("So we built a fix this week.") is not.
+- **Tie each feature to their complaint.** Say which problem a feature answers ("which should help with the inconsistency issue you mentioned. It's intended for exactly that.").
+- **Add the practical hint they need to use it.** "Your editor should do this automatically if you tell it."
+- **Structure:** thanks, what I added (one bullet per feature), how to use it, what to expect, "your current setup keeps working", thanks again.
+- **No closing homework question** unless the reply truly needs an answer from them.
+- **Drop internal detail:** no version numbers, no engine or model names, no setup jargon beyond one line.
+
+| Draft | Author's edit |
+|---|---|
+| I totally hear you: digging through your project for the master image and re-uploading it... shouldn't be your job. So we built a fix this week. | I totally hear you on all fronts. I just added in a few fixes and improvements that hopefully will help! |
+| What we built | What I just added |
+| ...no upload. | ...no upload. Your editor should do this automatically if you tell it. |
+| ...creatures get their own animations. | ...creatures get their own animations. You can pose each frame with a skeleton, which should help with the inconsistency issue you mentioned. It's intended for exactly that. |
+| What were you animating when that happened? I'd like to fix that next. | (removed) |
+
 ## Process
 
 1. Read the whole text. Note the numbers and technical terms that must survive.
