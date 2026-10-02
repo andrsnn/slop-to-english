@@ -56,4 +56,12 @@ More lines of the kind the skill treats as top priority. Each "before" hides a n
 The last two show the length trade-off. Slides had a 150-character limit, so the rewrite drops detail.
 Without a limit the skill keeps every fact (see `evals/cases_own.jsonl`, where the references keep them all).
 
+## Thumbnails and labels
+
+| Before | After |
+|---|---|
+| I MOVE THE SKELETON / Spritely draws the frame | CUSTOM SPRITE SKELETON POSING |
+| THE AI ATTACK WAS WEAK / so I posed a new one | CUSTOM ATTACK ANIMATION |
+| ONE DRAWING / 8 DIRECTIONS + A GAME | 8-DIRECTION SPRITE ANIMATION |
+
 Test cases built from these lines are in `evals/cases_own.jsonl`.

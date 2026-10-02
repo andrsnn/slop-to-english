@@ -113,6 +113,21 @@ drafted customer email by hand. They win over the plain-fact rules above where t
 | ...creatures get their own animations. | ...creatures get their own animations. You can pose each frame with a skeleton, which should help with the inconsistency issue you mentioned. It's intended for exactly that. |
 | What were you animating when that happened? I'd like to fix that next. | (removed) |
 
+## Thumbnails, titles, captions and labels (Aidan's edits, 2026-10-02)
+
+Short on-screen text names the thing. It does not narrate what someone does, and it does not judge.
+
+- **Name the feature in plain words.** The viewer should read the label and know what the video shows.
+- **No first-person narration in a label.** "I move the skeleton" is a sentence about the author. The label is the feature: "Custom sprite skeleton posing".
+- **No hype or put-downs.** "The AI attack was weak" is an opinion with no referent. Say what is on screen: "Custom attack animation" or "Default attack vs posed attack".
+- **No two-line call-and-response.** "I move the skeleton / Spritely draws the frame" reads like a slogan. One plain label is enough.
+
+| Draft | Aidan's version |
+|---|---|
+| I MOVE THE SKELETON / Spritely draws the frame | CUSTOM SPRITE SKELETON POSING |
+| THE AI ATTACK WAS WEAK / so I posed a new one | CUSTOM ATTACK ANIMATION |
+| ONE DRAWING / 8 DIRECTIONS + A GAME | 8-DIRECTION SPRITE ANIMATION |
+
 ## Process
 
 1. Read the whole text. Note the numbers and technical terms that must survive.
