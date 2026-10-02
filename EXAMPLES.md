@@ -41,6 +41,58 @@ More lines of the kind the skill treats as top priority. Each "before" hides a n
 | Balanced count | Three ways to get answers, one way to score them. | The script can send each test to a server, run a command, or read a saved file. Scoring is the same for all three. |
 | Slogan | Abuse fell, real users got in. | Abuse goes down. Real users still get in. |
 
+## Slide titles
+
+From a 90-day plan deck. A title is a full sentence that says who does what, with the number.
+
+| Type | Before | After |
+|---|---|---|
+| Figurative verb | Interviews and scans feed one ranked risk list | I rank the risks I find in interviews and in scans |
+| Topic label | What you told me, and what I will do about it | My response to four facts in your brief |
+| Imperative triad | Rank the risks, fix the highest, then give each one an owner | I rank the risks by day 30 and fix the top five by day 60 |
+| No verb | Thirteen weeks, with five dated milestones | The 90 days run for thirteen weeks and have five milestones |
+| No actor | Code gets four checks between a commit and production | We run four checks on every code change before production |
+| Explainer | How a scanner finding becomes a fix | We fix the findings an attacker can reach first |
+| Figurative verb | A test attack times how fast we detect and contain | I run a test attack each quarter and time our response |
+| Figurative verb | One control library feeds three outputs | One control library supplies the auditor, customers and my report |
+| Topic label | Who I work with, and what each gets from me | I work with five groups and send the executives a weekly update |
+| Topic label | Three things I defer, and what starts each one | Compliance sequencing: ISO certificates wait for a signed deal |
+| Vague claim | Each hire owns named work, so a cut shows what slows | We can run all six projects on schedule with four hires |
+| Figurative verb | An incident runs on three clocks | We act within 1 hour, 24 hours and 72 hours of an incident |
+
+## Inverted sentences
+
+The condition comes first and no person acts. The rewrite starts with the actor and puts the condition last.
+
+| Before | After |
+|---|---|
+| With no hires, one item stays on plan and three wait | We can finish three of the six projects by day 90 with no hires |
+| With one hire, three items stay on plan and one waits | We can finish five of the six projects by day 90 with one hire |
+| With two hires, four items stay on plan and two slow down | We can finish all six projects by day 90 with two hires |
+| I plan four hires, and each one owns named work | We can run all six projects on schedule with four hires |
+| Each quarter I run a test attack and time our response | I run a test attack each quarter and time our response |
+| In an incident we act within 1 hour, 24 hours and 72 hours | We act within 1 hour, 24 hours and 72 hours of an incident |
+| Every login for a person, an agent or a service account has an owner | We give every person, agent and service account login an owner |
+| Every code change passes four checks before it reaches production | We run four checks on every code change before production |
+| A vendor purchase and a questionnaire answer each take four steps | We approve a vendor in four steps and answer a questionnaire in four |
+| Five example risks, each with an owner and a date | I give each risk an owner and a date |
+| Without a baseline, no target can be promised | I set each target after I measure a baseline |
+| When the budget is cut, detection is the first thing to slip | We can keep detection on schedule only with the full budget |
+
+## Riddle titles
+
+Every noun in the title is a placeholder. The rewrite names the subject, then says the point.
+
+| Before | After |
+|---|---|
+| Three things I defer, and what starts each one | Compliance sequencing: ISO certificates wait for a signed deal |
+| What you told me, and what I will do about it | My response to four facts in your brief |
+| Who I work with, and what each gets from me | I work with five groups and send the executives a weekly update |
+| Each hire owns named work, so a cut shows what slows | We can run all six projects on schedule with four hires |
+| Six areas, and the first move in each | We run four checks on every code change before production |
+| Two inputs, one output, three outcomes | I rank the risks I find in interviews and in scans |
+| What changes, what stays, and why it matters | We keep the weekly report and drop the monthly one |
+
 ## Whole slides
 
 | Before | After |
