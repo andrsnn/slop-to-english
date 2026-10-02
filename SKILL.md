@@ -25,6 +25,8 @@ An opaque phrase sounds meaningful but has no literal meaning. The reader cannot
 | **Slogan** | "The machine is the manager." "Proof over claims." "Owning the stack." "Ship fast, learn faster." "Data beats opinions." | A poster line. It hides the actual rule or number. |
 | **Meta-flourish** | "An agent writing about agents." "Written by the thing it describes." "A story told in commits." "The numbers tell the story." | Talks about the text instead of saying something. |
 | **Idiom standing in for a number** | "Moved the needle." "Low-hanging fruit." "Hit the ground running." "A game of inches." | Hides how much, how long, or how many. |
+| **Inverted sentence** | "With no hires, one item stays on plan and three wait." "Without a baseline, no target can be promised." | The condition comes first and no person acts. Who does what, and how much? See "Inverted sentences" below. |
+| **Riddle title** | "Three things I defer, and what starts each one." "Two inputs, one output, three outcomes." | Every noun is a placeholder. The title describes the slide and never names the subject. What is the slide about? See "Riddle titles" below. |
 
 How to fix a Tier 1 phrase:
 
@@ -112,6 +114,83 @@ drafted customer email by hand. They win over the plain-fact rules above where t
 | ...no upload. | ...no upload. Your editor should do this automatically if you tell it. |
 | ...creatures get their own animations. | ...creatures get their own animations. You can pose each frame with a skeleton, which should help with the inconsistency issue you mentioned. It's intended for exactly that. |
 | What were you animating when that happened? I'd like to fix that next. | (removed) |
+
+## Slide titles
+
+A slide title is a full sentence with a subject and a verb. It states who does what, with the number.
+Use first person when the speaker does the action. These title failures come from a 90-day plan deck:
+
+- **Figurative verb.** "feeds", "runs on", "becomes". Name the action a person takes.
+- **Topic label or explainer.** "How X becomes Y", "What you told me, and what I will do about it", "Who I work with". Say the count and the action.
+- **Imperative triad** written for rhythm. Say who does each step and by when.
+- **Noun phrase with no verb.** "Thirteen weeks, with five dated milestones". Add the subject and the verb.
+- **Passive "X gets Y" with no actor.** Name what acts on what.
+
+| Type | Before | After |
+|---|---|---|
+| Figurative verb | Interviews and scans feed one ranked risk list | I rank the risks I find in interviews and in scans |
+| Topic label | What you told me, and what I will do about it | My response to four facts in your brief |
+| Imperative triad | Rank the risks, fix the highest, then give each one an owner | I rank the risks by day 30 and fix the top five by day 60 |
+| No verb | Thirteen weeks, with five dated milestones | The 90 days run for thirteen weeks and have five milestones |
+| No actor | Code gets four checks between a commit and production | We run four checks on every code change before production |
+| Explainer | How a scanner finding becomes a fix | We fix the findings an attacker can reach first |
+| Figurative verb | A test attack times how fast we detect and contain | I run a test attack each quarter and time our response |
+| Figurative verb | One control library feeds three outputs | One control library supplies the auditor, customers and my report |
+| Topic label | Who I work with, and what each gets from me | I work with five groups and send the executives a weekly update |
+| Topic label | Three things I defer, and what starts each one | Compliance sequencing: ISO certificates wait for a signed deal |
+| Vague claim | Each hire owns named work, so a cut shows what slows | We can run all six projects on schedule with four hires |
+| Figurative verb | An incident runs on three clocks | We act within 1 hour, 24 hours and 72 hours of an incident |
+
+## Inverted sentences (condition first, actor missing)
+
+An inverted sentence opens with a condition or circumstance: "With...", "Without...", "When...",
+"In...", "Each quarter...". Its subject is a thing or a count ("one item", "three wait", "two slow
+down"), and no person does anything. The listener hears the limit before they hear the result.
+
+- **Start with the actor.** "We" or "I", then "can" or a plain active verb, then the result with its number. Put the condition last. Pattern: "We can <result, with number> with <condition>."
+- **State what gets done.** Do not count what is left undone ("three wait", "two slow down"). Give the positive number out of the total ("three of the six").
+- **Name the things.** "One item", "named work" and "three things" hide what they are. Say "projects", "checks", "logins".
+- **Test:** can the listener answer "who does what, and how much" from the first five words?
+
+These come from a 90-day plan deck.
+
+| Before | After |
+|---|---|
+| With no hires, one item stays on plan and three wait | We can finish three of the six projects by day 90 with no hires |
+| With one hire, three items stay on plan and one waits | We can finish five of the six projects by day 90 with one hire |
+| With two hires, four items stay on plan and two slow down | We can finish all six projects by day 90 with two hires |
+| I plan four hires, and each one owns named work | We can run all six projects on schedule with four hires |
+| Each quarter I run a test attack and time our response | I run a test attack each quarter and time our response |
+| In an incident we act within 1 hour, 24 hours and 72 hours | We act within 1 hour, 24 hours and 72 hours of an incident |
+| Every login for a person, an agent or a service account has an owner | We give every person, agent and service account login an owner |
+| Every code change passes four checks before it reaches production | We run four checks on every code change before production |
+| A vendor purchase and a questionnaire answer each take four steps | We approve a vendor in four steps and answer a questionnaire in four |
+| Five example risks, each with an owner and a date | I give each risk an owner and a date |
+| Without a baseline, no target can be promised | I set each target after I measure a baseline |
+| When the budget is cut, detection is the first thing to slip | We can keep detection on schedule only with the full budget |
+
+## Riddle titles (describes the slide, never names the subject)
+
+A riddle title counts things and points at them with placeholders: "three things", "each one",
+"what starts each", "what I will do about it". It describes the layout of the slide. The listener
+cannot tell what the slide is about without reading the body. It is neither a metaphor nor a slogan.
+It is a riddle, because every noun is a placeholder.
+
+- **Name the subject, then say the point.** Use the ordinary term a colleague would use for the subject.
+- **A plain topic name beats a full sentence made of placeholders.** "Compliance sequencing" tells the listener more than "Three things I defer, and what starts each one".
+- **Test:** cover the body of the slide. Can the listener say what the slide is about from the title alone?
+
+These come from a 90-day plan deck.
+
+| Before | After |
+|---|---|
+| Three things I defer, and what starts each one | Compliance sequencing: ISO certificates wait for a signed deal |
+| What you told me, and what I will do about it | My response to four facts in your brief |
+| Who I work with, and what each gets from me | I work with five groups and send the executives a weekly update |
+| Each hire owns named work, so a cut shows what slows | We can run all six projects on schedule with four hires |
+| Six areas, and the first move in each | We run four checks on every code change before production |
+| Two inputs, one output, three outcomes | I rank the risks I find in interviews and in scans |
+| What changes, what stays, and why it matters | We keep the weekly report and drop the monthly one |
 
 ## Thumbnails, titles, captions and labels (Aidan's edits, 2026-10-02)
 
