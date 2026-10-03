@@ -27,6 +27,7 @@ An opaque phrase sounds meaningful but has no literal meaning. The reader cannot
 | **Idiom standing in for a number** | "Moved the needle." "Low-hanging fruit." "Hit the ground running." "A game of inches." | Hides how much, how long, or how many. |
 | **Inverted sentence** | "With no hires, one item stays on plan and three wait." "Without a baseline, no target can be promised." | The condition comes first and no person acts. Who does what, and how much? See "Inverted sentences" below. |
 | **Riddle title** | "Three things I defer, and what starts each one." "Two inputs, one output, three outcomes." | Every noun is a placeholder. The title describes the slide and never names the subject. What is the slide about? See "Riddle titles" below. |
+| **Shorthand that drops the noun or unit** | "Free is now 5 a day, plus 20 to start." | 5 what? The start of what? The reader has to guess. Write the full sentence with the noun and the unit. See "Notices and announcements to all users" below. |
 
 How to fix a Tier 1 phrase:
 
@@ -114,6 +115,35 @@ drafted customer email by hand. They win over the plain-fact rules above where t
 | ...no upload. | ...no upload. Your editor should do this automatically if you tell it. |
 | ...creatures get their own animations. | ...creatures get their own animations. You can pose each frame with a skeleton, which should help with the inconsistency issue you mentioned. It's intended for exactly that. |
 | What were you animating when that happened? I'd like to fix that next. | (removed) |
+
+## Notices and announcements to all users
+
+When the text is a short notice shown to every user (an in-app message, a banner, a pricing change),
+these rules come from an author rejecting four drafts of a free-plan notice and then writing it by hand.
+
+- **Write the full sentence with the noun and the unit.** "Free is now 5 a day, plus 20 to start" leaves the reader to guess 5 what and the start of what. Write "The free plan is now 5 generations per day, with 20 on your first day." Shorthand that is too compressed is slop too.
+- **Give the reason in one clause, then the action taken.** "Every generation has been losing money, so we're needing to update our free plan."
+- **Say what happens next for the reader as a full sentence.** "After you run out of generations you'll need to purchase a generation pack." A colon and a price ("needs a pack: $5 for 100") is a fragment.
+- **Use the one word the reader already knows.** Here that word is "generations". Leave out internal feature and tier names the reader may not know ("Lite animation", "Pose editor").
+- **Never state the business's revenue or income.** To be open about the reason, say the product loses money. Leave out how much it made.
+- **Keep it to a few sentences.** Cut dates, feature lists and second-order details.
+- **A short thank-you closing line is fine.**
+- **"We" and "our" are fine in a notice to everyone.** A personal reply or email to one user still uses "I" (see "Messages to a customer or user").
+
+The author's notice in full:
+
+> Every generation has been losing money, so we're needing to update our free plan to keep the product up and running.
+>
+> The free plan is now 5 generations per day, with 20 on your first day. After you run out of generations you'll need to purchase a generation pack.
+>
+> Everything you've made is still yours. Thank you for the continued support!
+
+| Draft | Author's version |
+|---|---|
+| Until now you got 50 free generations a day, and that included animations that cost me more to make than I charged. From (date), the free plan is 5 generations a day for still images and Lite animation. You also get 20 generations to spend on anything, including the Pose editor. Video and extra Pose editor runs need a pack or a plan. | The free plan is now 5 generations per day, with 20 on your first day. After you run out of generations you'll need to purchase a generation pack. |
+| Free is now 5 a day for images and Lite animation, plus 20 to try anything. | The free plan is now 5 generations per day, with 20 on your first day. |
+| I run the product by myself. Last month it made about $X and cost me about $Y to run. | Every generation has been losing money, so we're needing to update our free plan to keep the product up and running. |
+| Free is now 5 a day, plus 20 to start. Animation after that needs a pack: $5 for 100. | The free plan is now 5 generations per day, with 20 on your first day. After you run out of generations you'll need to purchase a generation pack. |
 
 ## Slide titles
 

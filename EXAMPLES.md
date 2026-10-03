@@ -116,4 +116,15 @@ Without a limit the skill keeps every fact (see `evals/cases_own.jsonl`, where t
 | THE AI ATTACK WAS WEAK / so I posed a new one | CUSTOM ATTACK ANIMATION |
 | ONE DRAWING / 8 DIRECTIONS + A GAME | 8-DIRECTION SPRITE ANIMATION |
 
+## Notices to all users
+
+A short notice shown to every user. The rewrite is a full sentence with the noun and the unit, and it leaves out revenue figures and internal feature names.
+
+| Before | After |
+|---|---|
+| Free is now 5 a day, plus 20 to start. | The free plan is now 5 generations per day, with 20 on your first day. |
+| Animation after that needs a pack: $5 for 100. | After you run out of generations you'll need to purchase a generation pack. |
+| Free is now 5 a day for images and Lite animation, plus 20 to try anything. | The free plan is now 5 generations per day, with 20 on your first day. |
+| I run the product by myself. Last month it made about $X and cost me about $Y to run. | Every generation has been losing money, so we're needing to update our free plan to keep the product up and running. |
+
 Test cases built from these lines are in `evals/cases_own.jsonl`.
