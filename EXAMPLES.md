@@ -115,6 +115,7 @@ Without a limit the skill keeps every fact (see `evals/cases_own.jsonl`, where t
 | I MOVE THE SKELETON / Spritely draws the frame | CUSTOM SPRITE SKELETON POSING |
 | THE AI ATTACK WAS WEAK / so I posed a new one | CUSTOM ATTACK ANIMATION |
 | ONE DRAWING / 8 DIRECTIONS + A GAME | 8-DIRECTION SPRITE ANIMATION |
+| Run, isometric: the chart that made each frame, drawn on top | Isometric run with the skeleton chart over each frame |
 
 ## Notices to all users
 
