@@ -240,6 +240,18 @@ Short on-screen text names the thing. It does not narrate what someone does, and
 | THE AI ATTACK WAS WEAK / so I posed a new one | CUSTOM ATTACK ANIMATION |
 | ONE DRAWING / 8 DIRECTIONS + A GAME | 8-DIRECTION SPRITE ANIMATION |
 
+### Voiceover narration
+
+Narration over a screen recording can use first person, unlike a label. Each line still has to say what happened and where.
+
+- **Past tense for an action the viewer watches.** "I upload", "I pick" and "I drag" are play-by-play. They sound like a script being read. Write "I uploaded" and "I picked".
+- **Name where it went.** "I upload the drawing" leaves the listener asking "upload it where?". Name the tool or the destination.
+
+| Draft | Rewrite |
+|---|---|
+| I upload the drawing. | I uploaded the drawing to Spritely. |
+| I pick the isometric camera, all eight directions, and unarmed, then type run. | I picked the isometric camera, all eight directions and unarmed in Spritely, then typed run. |
+
 ## Process
 
 1. Read the whole text. Note the numbers and technical terms that must survive.
