@@ -28,6 +28,7 @@ An opaque phrase sounds meaningful but has no literal meaning. The reader cannot
 | **Inverted sentence** | "With no hires, one item stays on plan and three wait." "Without a baseline, no target can be promised." | The condition comes first and no person acts. Who does what, and how much? See "Inverted sentences" below. |
 | **Riddle title** | "Three things I defer, and what starts each one." "Two inputs, one output, three outcomes." | Every noun is a placeholder. The title describes the slide and never names the subject. What is the slide about? See "Riddle titles" below. |
 | **Shorthand that drops the noun or unit** | "Free is now 5 a day, plus 20 to start." | 5 what? The start of what? The reader has to guess. Write the full sentence with the noun and the unit. See "Notices and announcements to all users" below. |
+| **Tool treated as a person** | "You give them one picture of the character." "They work in 8 directions." "Feed it a skeleton." "Hand it the image." | "Them" and "it" stand for a model or tool, and "give", "feed" and "hand" are things you do for a person. Name the tool, and use "provide" for its inputs. |
 
 How to fix a Tier 1 phrase:
 
@@ -90,6 +91,8 @@ Tier 1 first. These are real drafts from a slide deck written by a local model.
 | Symbols | 23/23 e2e | All 23 end-to-end tests pass |
 | Not X but Y | Our cache isn't just a speed boost, it's a rethinking of how Redis 7.2 serves 12,000 requests per second. | The new cache runs on Redis 7.2 and serves 12,000 requests per second. |
 | Triad | Speed, reliability, and scalability through 3 regional data centers. | The platform runs in 3 regional data centers. |
+| Tool treated as a person | You give them one picture of the character and a chart of colored joints. | Provide a picture of the character and a skeleton chart to the tool. |
+| Tool treated as a person | They work in 8 directions with side-scroller, isometric and top-down cameras. | The LoRAs work in 8 directions with side-scroller, isometric and top-down cameras. |
 | Sycophantic opener | Great question! You're absolutely right to ask. The default timeout is 30 seconds. | The default timeout is 30 seconds. |
 
 More in `EXAMPLES.md` and `evals/cases.jsonl`.
