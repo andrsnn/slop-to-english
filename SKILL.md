@@ -14,6 +14,48 @@ p99, MAU). The target is phrasing that does not say anything you can point at.
 Say the line out loud to someone across a table. Then ask: **what happened, who did it, what number?**
 If the listener would ask "what does that mean?", the line is opaque. Rewrite it as the literal fact.
 
+## CRITICAL: describing what is on screen (Aidan, 2026-10-11)
+
+When a line describes a chart, an animation, a screenshot or anything else a viewer can see, write it
+the way the speaker would say it while pointing at the screen. Aidan rejected two drafts of the same
+line before he accepted the third.
+
+| Draft | Aidan's verdict |
+|---|---|
+| The picture is a line that climbs, made of real screenshots with their scores. The target picture sits at the top, and one step drops and gets undone. | Slop |
+| The animation is a chart of real scores. Each point shows the screenshot that got that score. The target image is at the top. One change lowers the score, and the agent undoes it. | Still slop |
+| Each dot on this chart is a screenshot of my game, with the score my judge gave it. If a change makes the score go down, my agent undoes it. | Right |
+
+Why the first two fail:
+
+- Nobody says "The animation is a chart" or "The picture is a line". A person points and says "this chart".
+- "A line that climbs", "sits at the top" and "a step drops" are figurative verbs. Lines do not climb. Scores go up.
+- "The screenshot that got that score" makes the screenshot the actor. The judge gave the score.
+- "One change lowers the score" and "gets undone" have no person or program doing the action.
+- The first draft uses "picture" for both the animation and the target image. Use one word for one thing.
+- The second draft swapped the flagged words and kept the written shape. Swapping words is not the fix.
+  Say the line out loud the way you would say it to a friend looking at the same screen, and write that.
+
+How to write these lines:
+
+1. Start from what the viewer is looking at: "this chart", "each dot", "on the left".
+2. Say what each thing on screen is in plain words: "a screenshot of my game".
+3. Name who does each action: my judge scores it, my agent undoes it, I play it. A picture, chart,
+   line, screenshot or step never does anything.
+4. Use "if" for a rule that happens again and again: "If a change makes the score go down, my agent undoes it."
+5. Read it out loud. If it sounds like a caption under a figure in a paper, rewrite it.
+
+More lines of the same kind:
+
+| Before | After |
+|---|---|
+| The chart climbs from 4 to 9. | My judge scored it 4, then 9. |
+| The reference sits on the left and the build on the right. | On the left is the picture I want. On the right is what my agent built. |
+| The screenshot earns a 6 out of 10. | My judge gave this screenshot a 6 out of 10. |
+| The loss curve flattens after epoch 14. | After epoch 14 the loss stops going down. |
+| The progress bar fills as the job runs. | This bar shows how much of the job is done. |
+| The diagram shows screenshots flowing from the agent into the judge. | Here my agent sends its screenshots to my judge. |
+
 ## Tier 1: opaque phrases (fix these first, they are the most common)
 
 An opaque phrase sounds meaningful but has no literal meaning. The reader cannot say what it claims.
