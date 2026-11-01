@@ -64,3 +64,21 @@ class BatchTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CodexAskerTests(unittest.TestCase):
+    def test_codex_asker_sends_prompt_on_stdin_and_reads_last_message(self):
+        import tempfile, textwrap
+        from rewrite_batch import codex_asker
+        with tempfile.TemporaryDirectory() as d:
+            fake = os.path.join(d, "fake_codex.py")
+            open(fake, "w").write(textwrap.dedent("""
+                import sys
+                args = sys.argv[1:]
+                out = args[args.index("--output-last-message") + 1]
+                prompt = sys.stdin.read()
+                open(out, "w", encoding="utf-8").write('["echo: ' + ("SYSTEM" if "SYSTEM" in prompt else "missing") + '"]')
+            """))
+            ask = codex_asker((sys.executable, fake))
+            self.assertEqual(ask("SYSTEM rules", '[{"i": 0, "text": "x"}]'), '["echo: SYSTEM"]')
+
