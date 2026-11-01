@@ -7,6 +7,7 @@ Output is a JSON list of {"id", "before", "after", "changed", "ok", "problems"}.
 then keep "before". Standard library only.
 
   python rewrite_batch.py strings.json out.json --openai-url http://localhost:11434/v1 --model glm-5.3:cloud
+  python rewrite_batch.py strings.json out.json --codex          (through the Codex CLI)
 
 Checks on every rewrite:
   tokens    the protected tokens (${...}, {0}, {{0}}, %s, HTML tags, entities, \\ escapes) are the
@@ -208,10 +209,26 @@ def openai_asker(url, model, key, temperature=0.0):
     return ask
 
 
+def codex_asker(cmd=("codex",), timeout=900):
+    """Ask through the Codex CLI (`codex exec`) instead of an OpenAI-style endpoint: the system prompt and the
+    batch go in on stdin, the reply is Codex's last message. For when no chat endpoint is available."""
+    import subprocess, tempfile
+
+    def ask(system, user):
+        with tempfile.TemporaryDirectory() as d:
+            out = os.path.join(d, "reply.txt")
+            prompt = system + "\n\n---\nINPUT:\n" + user
+            subprocess.run([*cmd, "exec", "--skip-git-repo-check", "-s", "read-only", "-C", d, "--output-last-message", out, "-"],
+                           input=prompt.encode("utf-8"), capture_output=True, timeout=timeout)
+            return open(out, encoding="utf-8").read() if os.path.exists(out) else ""
+    return ask
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("input"), ap.add_argument("output")
-    ap.add_argument("--openai-url", required=True), ap.add_argument("--model", default="default")
+    ap.add_argument("--openai-url"), ap.add_argument("--model", default="default")
+    ap.add_argument("--codex", nargs="?", const="codex", help="ask through `codex exec` (path to the codex CLI) instead of --openai-url")
     ap.add_argument("--api-key", default=os.environ.get("OPENAI_API_KEY", ""))
     ap.add_argument("--batch-size", type=int, default=20)
     ap.add_argument("--workers", type=int, default=3, help="requests in flight at once")
@@ -224,7 +241,12 @@ def main():
     system = open(SKILL_MD, encoding="utf-8").read() + BATCH_RULES
     if a.rules:
         system += "\n" + open(a.rules, encoding="utf-8").read()
-    ask = openai_asker(a.openai_url, a.model, a.api_key, a.temperature)
+    if a.codex:
+        ask = codex_asker((a.codex,))
+    elif a.openai_url:
+        ask = openai_asker(a.openai_url, a.model, a.api_key, a.temperature)
+    else:
+        ap.error("give --openai-url or --codex")
     rewrites = rewrite_all(items, ask, system, a.batch_size, a.workers, a.output + ".cache.jsonl", a.model,
                            log=lambda m: print("\r" + m, end="", file=sys.stderr))
     print(file=sys.stderr)
