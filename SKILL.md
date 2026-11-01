@@ -1,6 +1,6 @@
 ---
 name: slop-to-english
-description: Rewrite text (slides, docs, READMEs, replies, copy) so a person can read it aloud and the listener knows what it claims. Removes opaque phrases first (figurative verbs, abstract nouns with no referent, slogans, meta-flourishes), then the classic LLM tells (not X but Y, triads, punchline dashes, AI vocabulary). Technical terms and numbers stay. Use when asked to de-slop, de-LLM, humanize, or "make it sound like a person", or when text is convoluted or slogan-y.
+description: Rewrite text (slides, docs, READMEs, replies, copy) so a person can read it aloud and the listener knows what it claims. Removes opaque phrases first (figurative verbs, abstract nouns with no referent, slogans, meta-flourishes), then the classic LLM tells (not X but Y, triads, punchline dashes, AI vocabulary). Technical terms and numbers stay. Every line must be something a person would say out loud and must make sense out of context; a GLM 5.3 pass (tools/sayable.py, through Ollama) checks each line. Mandatory for player-facing or published copy (narration, in-game text, UI text, slides, READMEs). Use when asked to de-slop, de-LLM, humanize, or "make it sound like a person", or when text is convoluted or slogan-y.
 ---
 
 # slop-to-english
@@ -9,10 +9,79 @@ Text written by a language model often sounds like a poster instead of a person.
 each line states a fact a listener can repeat back. Technical terms are fine (LoRA, cache hit,
 p99, MAU). The target is phrasing that does not say anything you can point at.
 
-## The test
+## The test: would a person say this out loud?
 
-Say the line out loud to someone across a table. Then ask: **what happened, who did it, what number?**
-If the listener would ask "what does that mean?", the line is opaque. Rewrite it as the literal fact.
+Say the line out loud, once, to a friend across a table who has seen nothing else. Then ask:
+**what happened, who did it, what number?** If the friend would stop you to ask "what does that mean?",
+"who did that?", "of what?" or "which one?", the line fails. Every line has to pass on its own, out of
+context: narration, in-game text, UI text, slides and READMEs alike. Less text is better. Cut a line
+that adds nothing before you try to fix it.
+
+This is the rule broken most often. These are the shapes that break it. The lines are made up; each
+copies a real failure.
+
+| Shape | Line that fails | What a person says |
+|---|---|---|
+| A thing acts like a person | Then I found the oven settings were trusting the old recipe too. | Then I found the oven settings came from the old recipe too. |
+| No one does the action | The shelf was cut for a narrower wall. | I cut the shelf for a narrower wall. |
+| A word points at something never named | Now a small script cleans up whenever those runs leave temp files. | Now a small script deletes the temp files the nightly build leaves behind. |
+| A dropped noun or unit | Each field makes one more every day. | Each field grows one more crop every day. |
+| A clause that lands on the wrong noun | So there's a checklist of the steps that every new hire is told to read. | So there's a checklist of the steps, and every new hire is told to read it. |
+| Stacked hedges in a README | Budget roughly several hours on one big graphics card. | Expect it to take several hours on one big graphics card. |
+| Poster shorthand | If sync fails, retry app first. | If syncing fails, restart the app and try again. |
+| Figurative verb | Support for the old format quietly evaporated. | We removed support for the old format. |
+| A joke you decode in two steps | Your parcel flew in one second! The pilot got half. | Your parcel is here! It's a little bent. |
+| A joke that explains itself | You crashed! We added ads. Removing them costs more than the car. | You crashed! Please enjoy this ad. |
+
+If `private/REAL-EXAMPLES.md` exists in this skill's folder, read it too: it holds the owner's real failures
+and the fixes they accepted.
+
+For a joke, the thing on screen does the joke: name it and add one short, plain reaction. Never explain
+the joke. Under 10 words is best.
+
+Swapping one word is not the fix. Say the line again from scratch, the way you would say it to the friend.
+Then run the GLM pass below on it.
+
+## The GLM pass (run it on all copy someone will read or hear)
+
+Your own rewrite is not enough. In past sessions Claude rewrote lines that still made no sense, and GLM 5.3
+caught them. `tools/sayable.py` sends each line to GLM 5.3 through Ollama (`glm-5.3:cloud` runs on
+Ollama's servers, not on this laptop). For each line it says keep or fix, names the words a listener trips on,
+and gives a plain rewrite that keeps every number and name.
+
+When to run it: after your own rewrite, on every line of player-facing or published copy (narration, in-game
+text, UI text, slides, READMEs, video descriptions), before you call the copy done or show it to Aidan.
+
+The script is in this skill's folder (installed copy: `~/.claude/skills/slop-to-english/tools/sayable.py`).
+Python standard library only. Pipe a few lines in, or pass a text file or a JSON list:
+
+```
+echo "When it fails, fix tool first." | python -I ~/.claude/skills/slop-to-english/tools/sayable.py - --context "Voiceover"
+python -I ~/.claude/skills/slop-to-english/tools/sayable.py copy.txt --context "Voiceover for a YouTube video"
+python -I ~/.claude/skills/slop-to-english/tools/sayable.py strings.json --context "Button labels in a desktop app" --json verdicts.json
+```
+
+How to read the output:
+
+- `FIX <id>: <line>`, then `problem:` (what the friend would ask) and `say:` (GLM's rewrite). Use the rewrite,
+  or write your own that fixes the named problem. Then run the pass again on the lines you changed.
+- `check: lost number ...` means the rewrite dropped a number. Do not use it as it is.
+  `check: longer ...` means it grew; trim it.
+- `???` means GLM gave no usable answer for that line. Judge it yourself with the test above.
+- Lines it does not list passed. Exit code 0 means every line passed, 1 means some need fixing.
+- `GLM PASS UNAVAILABLE: <reason>` (exit code 3) means Ollama is not running, not signed in, or out of
+  usage. Tell Aidan in one line, then fall back to this file's rules alone: read each line out loud with the
+  test above. Do not skip the copy check because GLM is down.
+- For more than about 20 new lines (a game's whole script, a batch of UI strings), show Aidan 10 sample
+  lines first and get a yes before you rewrite or record the rest.
+- Use `--no-think` to spend less of the Ollama account's usage on a large batch.
+- For a whole set of jokes or game lines, the pass works better as a check than as the writer. The lines Aidan
+  liked came from asking GLM to write each line fresh from a short brief (what happens on screen, the rules
+  above, under 14 words), then checking them with this pass.
+- The pass is strict: on a line that is already plain it may still suggest splitting a sentence. Treat that
+  as a suggestion. A line it flags with a real question ("who did that?", "of what?") must change.
+
+On 27 real failures from the owner's sessions, the pass flagged 25. The lines and results are kept private.
 
 ## CRITICAL: describing what is on screen (Aidan, 2026-10-11)
 
@@ -300,7 +369,9 @@ Narration over a screen recording can use first person, unlike a label. Each lin
 2. Flag each line that fails the test. Tier 1 first.
 3. Rewrite only flagged lines. Leave the rest.
 4. Read the result out loud in your head. Fix anything you would stumble on or feel silly saying.
-5. Return the rewrite. If asked for a review only, return each flagged line with its replacement and do not edit files. If told to edit files, edit in place and list what changed.
+5. Run the GLM pass (`tools/sayable.py`) on the result. Fix what it flags, then run it again on the changed lines.
+   If it says GLM PASS UNAVAILABLE, say so and rely on steps 2 to 4.
+6. Return the rewrite. If asked for a review only, return each flagged line with its replacement and do not edit files. If told to edit files, edit in place and list what changed.
 
 ## Do not
 
