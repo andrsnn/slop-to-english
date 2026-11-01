@@ -18,4 +18,17 @@ python rewrite_batch.py strings.json out.json --openai-url http://localhost:1143
 python -m unittest evals/test_rewrite_batch.py
 ```
 
+To check whether a person would say each line out loud, run the GLM pass. It sends each line to GLM 5.3
+through Ollama (`glm-5.3:cloud`, which runs on Ollama's servers) and prints a keep or fix verdict, what a
+listener would ask, and a plain rewrite. If Ollama is down, not signed in or out of usage, it prints
+`GLM PASS UNAVAILABLE` and exits with code 3, and you use SKILL.md's rules alone.
+
+```
+python tools/sayable.py copy.txt --context "Voiceover for a YouTube video"
+python -m unittest tests/test_sayable.py
+python tests/run_sayable_eval.py
+```
+
+The last command runs the pass over the fixtures and writes `private/RESULTS.md`. The real failures it was tuned on stay private (`private/sayable.jsonl`, gitignored); without them it runs over the made-up examples in `tests/fixtures/sayable.example.jsonl`.
+
 [Examples](EXAMPLES.md) · [Research](docs/research.md) · [Test cases](evals/cases.jsonl) · Other LLMs: paste [SKILL.md](SKILL.md) as the prompt
