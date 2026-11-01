@@ -11,12 +11,17 @@ SKILL.md's rules and must keep every number, name and game term; a rewrite that 
 original is rejected and the line keeps its old text. Files are rewritten in place only by `apply`.
 """
 import argparse, glob, json, re, sys, time, urllib.request
+from difflib import SequenceMatcher
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent.parent
 BAD = re.compile(r"\$\{|[{}<>=;]|https?:|\\n|\w/\w+/|\.(ts|png|json|js|mjs)\b")
 NUM = re.compile(r"\d+(?:\.\d+)?")
+# words that start sentences, not names
+COMMON = set("the a an it its you your this that these those there here in on at if when then press each every he she "
+             "they we i my our his her their one some no not and but or so to of for with by from as after before while "
+             "what who why how hold tap use read watch find go get take make keep be is are was nobody".split())
 
 
 def literals(text: str):
@@ -85,6 +90,13 @@ def accept(old: str, new: str) -> str:
     new = new.strip().replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"').replace('—', ', ')
     if not new or '\n' in new or len(new) > 1.6 * len(old) + 10: return old
     if sorted(NUM.findall(old)) != sorted(NUM.findall(new)): return old  # a number changed or went missing
+    # the model sometimes answers a batch shifted by a line, so a sentence lands on another sentence's place ("This wall is
+    # cracked. You need Smash" came back as "This gap is too wide. You need Dash"): a rewrite must keep most of the words
+    words = lambda s: set(re.findall(r"[a-z']+", s.lower()))
+    wo, wn = words(old), words(new)
+    if len(wo & wn) / max(1, len(wo)) < .6 or SequenceMatcher(None, old.lower(), new.lower()).ratio() < .6: return old
+    for name in re.findall(r"\b[A-Z][a-z]+\b", old):  # a name or game term in the line must survive
+        if name.lower() not in COMMON and name not in new: return old
     return new
 
 
