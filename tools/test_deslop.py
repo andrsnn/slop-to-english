@@ -30,3 +30,9 @@ def test_apply_writes_back_escaped(tmp_path):
     (tmp_path / 'deslop-proposals.json').write_text(json.dumps({"It's a round iron helmet. You take 5 percent less damage.": "It's an iron helmet. You take 5 percent less damage."}))
     assert D.apply(tmp_path) == 1
     assert "text:'It\\'s an iron helmet. You take 5 percent less damage.'" in f.read_text()
+
+
+def test_accept_refuses_a_different_sentence_and_lost_names():
+    assert D.accept("This wall is cracked. You need Smash to break it.", "This gap is too wide. You need Dash.").startswith('This wall')
+    assert D.accept("Bel keeps watch from here, and patrols show on your map.", "Someone keeps watch from here, and patrols show on your map.").startswith('Bel')
+    assert D.accept("Read the overhead. Space parry. Cut to riposte.", "Watch for the overhead. Press Space to parry. Cut to riposte.") == "Watch for the overhead. Press Space to parry. Cut to riposte."
